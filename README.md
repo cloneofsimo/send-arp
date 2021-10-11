@@ -9,14 +9,20 @@ syntax : send-arp <interface> <sender ip> <target ip> [<sender ip 2> <target ip 
 sample : send-arp wlan0 192.168.10.2 192.168.10.1
 ```
 
-# If successful...
+## If successful...
 
 <p align="center">
   <img src="./arp.png" alt="modelfig"/>
 </p>
 
 
-# Which leads to...
+## Which leads to...
+
+```
+tsharkl -f "arp || icmp"
+```
+
+Ping 8.8.8.8 on device
 
 <p align="center">
   <img src="/arp_table_poisoned.png" alt="modelfig"/>
